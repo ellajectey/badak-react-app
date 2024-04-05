@@ -119,7 +119,7 @@ ul {
 }
 
 .body-items {
-  display: inline-block;
+  display: flex;
   width: auto;
 }
 
@@ -133,7 +133,7 @@ ul {
   padding-left: 8px;
   padding-right: 8px;
   overflow: hidden;
-  width: auto;
+  width: 80%;
   min-height: 100%;
 
 }
@@ -195,6 +195,10 @@ grid-row-gap: 0px;
   padding: 24px;
 }
 
+.radio-group{
+  padding-left: 16px;
+}
+
 
 .fullname {
   padding: 8px;
@@ -220,7 +224,7 @@ grid-row-gap: 0px;
   outline: none;
 }
 
-.upload {
+.bottom-right{
   border-style: dashed;
   border-color: beige;
   border-radius: 16px;
@@ -246,18 +250,23 @@ grid-row-gap: 0px;
   z-index: -1;
   position: absolute;
 }
-
+.submit-request{
+  text-align: right;
+  margin-right: 20px;
+}
 .primary-upload-2 {
   background-color: rgb(95, 95, 225);
   color: white;
   border-radius: 4px;
   border: none;
   padding: 8px;
+  margin:4px;
 }
 
 .secondary-upload {
   background-color: white;
-  border: 1.5px solid rgb(60, 60, 60);
+  border: 1.5px solid rgb(245, 148, 148);
   border-radius: 4px;
   padding: 8px;
+  margin: 4px;
 }

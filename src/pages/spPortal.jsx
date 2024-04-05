@@ -9,12 +9,8 @@ function SpPortal() {
     return (
         <div>
             <Navbar/>
-
-            <div className="body-items">
-                
-            <Sidebar/>
-            <Container/>
-                
+            <div className="body-items ">  
+            <Sidebar/><Container/>  
             </div>
             
         </div>

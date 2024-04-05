@@ -36,16 +36,18 @@ function Container() {
                                 <label>Email</label><br />
                                 <input type="text" className="email" /><br /><br />
                                 <h4>Quel est votre Diploma?</h4>
-                                <input type="radio" id="baccalaureat" name="Baccalaureat" value="Baccalaureat" />
+                                <div className='radio-group'>
+                                <input type="radio" id="baccalaureat" name="diplome" value="Baccalaureat" />
                                 <label htmlFor="baccalaureat">Baccalaureat</label><br />
-                                <input type="radio" id="bts" name="Bts" value="BTS" />
+                                <input type="radio" id="bts" name="diplome" value="BTS" />
                                 <label htmlFor="bts">BTS</label><br />
-                                <input type="radio" id="licence" name="Licence" value="Licence" />
+                                <input type="radio" id="licence" name="diplome" value="Licence" />
                                 <label htmlFor="licence">Licence</label><br />
-                                <input type="radio" id="master" name="Master" value="Master" />
+                                <input type="radio" id="master" name="diplome" value="Master" />
                                 <label htmlFor="master">Master</label><br />
+                                </div>
                             </div>
-                            <div className="upload">
+                            <div className="bottom-right">
                                 <i className="fas fa-cloud-upload-alt" id="cloud"></i>
                                 <h4>Selectionez un fischez ou glissez-deposez ici</h4>
                                 <p>En format PDF,la taille du fichier doit être maximale de 10 Mo </p>
@@ -56,11 +58,17 @@ function Container() {
                                 </button>
                                 <br />
                                 <br />
-                                <button className="primary-upload-2">Envoyer ma demande</button>
-                                <button className="secondary-upload">Annuler</button>
+                                
                             </div>
+                           
                         </div>
+                        
                     </div>
+                   <div className='submit-request'>
+                   <button type="submit" className="primary-upload-2">Envoyer ma demande</button>
+                    <button type="reset" className="secondary-upload">Annuler</button>
+                   </div>
+                    
                 </div>
         </div>
     );

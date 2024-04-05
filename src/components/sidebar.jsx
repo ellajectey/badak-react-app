@@ -1,4 +1,6 @@
 import React from 'react';
+import "../index.css";
+import img from "../assets/badak-logo.png"
 
 function Sidebar() {
     return (
@@ -7,7 +9,7 @@ function Sidebar() {
            <aside className="sidebar">
                     <div>
                         {/* Menus */}
-                        <img src="assets/badak-logo.png" alt="badak logo" className="img-logo" />
+                        <img src={img} alt="badak logo" className="img-logo" />
                         <ul>
                             <li>
                                 <label>Menus</label>
