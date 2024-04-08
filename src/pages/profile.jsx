@@ -7,6 +7,7 @@ import Sidebar from '../components/sidebar';
 function Profile() {
     return (
         <div>
+            {/* Profile page */}
             <Navbar/>
             <Userdetails/>
             <br/>

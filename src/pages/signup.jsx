@@ -3,8 +3,8 @@ import Registercard from '../components/registercard';
 
 function Signup() {
     return (
-        <div className=
-        "bg-gray-700">
+        <div className="bg-gray-700">
+            {/* Registration page */}
             <Registercard/>
         </div>
     );
