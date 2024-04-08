@@ -1,10 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5e2e2;
 }
 
 code {
@@ -12,263 +15,34 @@ code {
     monospace;
 }
 
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-body {
-  margin: 0;
-  background-color: #e5e2e2;
-}
-
-i {
-  height: 20px;
-  width: 20px;
-  color: rgb(95, 95, 225);
-  padding-left: 4px;
-  padding-right: 4px;
-  text-align: center;
-}
 
 /* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  width: auto;
-  position: right;
-  padding: 0 20px 0 20px;
-}
 
-#user {
-  display: inline-flex;
-}
-
-#caret {
-  padding-top: 15px;
-  height: 4vh;
-}
-
-
-#user-icon {
-  padding: 15px;
-  height: 10%;
-  font-size: 30px;
-  
-}
-
-.navbar-search {
-  width: 30%;
-  height: auto;
-  border-radius: 4px;
-  background-color: #f7f6f6;
-  padding: 8px;
-}
-
-.search {
-  border: none;
-  background-color: #f7f6f6;
-}
-
-.search:focus {
-  outline: none;
-}
 
 /* Sidebar */
 
-.sidebar {
-  position: relative;
-  min-height: 100%;
-  box-shadow: #949494;
-  background-color: white;
-  border: 2px solid rgb(95, 95, 225);
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 40px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.img-logo {
-  width: 150px;
-  height: 120px;
-}
-
-li {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  padding: 8px;
-}
-
-li:hover {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  padding: 2px;
-  background-color: rgb(174, 241, 253);
-  border-radius: 4px;
-}
-
-ul {
-  width: auto;
-  margin-left: none;
-  padding: 20px;
-}
-
-.body-items {
-  display: flex;
-  width: auto;
-}
 
 /* Container */
-.user-container {
-  margin: 8px;
-  background-color: white;
-  position: absolute;
-  padding-bottom: 60px;
-  padding-top: 30px;
-  padding-left: 8px;
-  padding-right: 8px;
-  overflow: hidden;
-  width: 80%;
-  min-height: 100%;
-
-}
-
-.progress-bars{
-/* text-align: center;
-padding:10px;
-display: inline-block; */
-text-align: left;
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: 1fr;
-grid-column-gap: 24px;
-grid-row-gap: 0px;
-}
-.progress-bar-1{
-  
-  padding:8px;
-  text-align: right;
-}
-.progress-bar-2{
-  
-  padding:8px;
-  text-align: left;
-}
-.image-upload {
-  text-align: center;
-  color: blue;
-  padding: 20px;
-}
-
-.img-input {
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-
-#camera-icon {
-  padding: 20px;
-  border-radius: 40px;
-  background-color: #f7f6f6;
-  font-size: 20px;
-  text-align: center;
-  color: gray;
-}
-
-.primary {
-  color: blue;
-  text-align: center;
-
-}
-
-.container-bottom {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 24px;
-  grid-row-gap: 0px;
-  padding: 24px;
-}
-
-.radio-group{
-  padding-left: 16px;
-}
 
 
-.fullname {
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid rgb(138, 138, 138);
-  width: 80%;
-}
-
-.fullname:focus {
-  outline: none;
-}
 
 
-.email {
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid rgb(138, 138, 138);
-  width: 80%;
 
-}
 
-.email:focus {
-  outline: none;
-}
 
-.bottom-right{
-  border-style: dashed;
-  border-color: beige;
-  border-radius: 16px;
-  width: fit-content;
-  padding: 50px;
-  text-align: center;
-}
 
-#cloud {
 
-  font-size: 40px;
-  color: rgb(186, 186, 255);
-}
-.primary-upload-1 {
-  background-color: rgb(243, 219, 3);
-  color: white;
-  border-radius: 4px;
-  border: none;
-  padding: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-.file-upload{
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-}
-.submit-request{
-  text-align: right;
-  margin-right: 20px;
-}
-.primary-upload-2 {
-  background-color: rgb(95, 95, 225);
-  color: white;
-  border-radius: 4px;
-  border: none;
-  padding: 8px;
-  margin:4px;
-}
 
-.secondary-upload {
-  background-color: white;
-  border: 1.5px solid rgb(245, 148, 148);
-  border-radius: 4px;
-  padding: 8px;
-  margin: 4px;
-}
+
+
+
+
+
+
+
+
+
+
+
+

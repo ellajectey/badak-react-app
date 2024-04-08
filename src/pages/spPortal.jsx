@@ -9,7 +9,7 @@ function SpPortal() {
     return (
         <div>
             <Navbar/>
-            <div className="body-items ">  
+            <div className="flex w-auto">  
             <Sidebar/><Container/>  
             </div>
             
