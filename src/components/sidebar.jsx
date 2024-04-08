@@ -6,7 +6,7 @@ function Sidebar() {
     return (
         <div>
            {/* Sidebar */}
-           <aside className="relative min-h-screen shadow bg-white border-2 border-blue-600 pt-20 pb-10 overflow-x-hidden">
+           <aside className="flex min-h-screen shadow bg-white border-2 border-blue-600 pt-20 pb-10 overflow-x-hidden">
                     <div>
                         {/* Menus */}
                         <img src={img} alt="badak logo" className="w-60 h-60 text-center" />

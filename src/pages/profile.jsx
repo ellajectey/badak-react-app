@@ -1,13 +1,15 @@
 import React from 'react';
 import Userdetails from '../components/userdetails';
 import Allrequests from '../components/allrequests';
+import Navbar from '../components/navbar';
+import Sidebar from '../components/sidebar';
 
 function Profile() {
     return (
         <div>
+            <Navbar/>
             <Userdetails/>
-            {/* profile resource */}
-            {/* https://www.behance.net/gallery/184520011/CRM-User-Page?tracking_source=search_projects|profile+page+ui&l=41 */}
+            <br/>
             <Allrequests/>
         </div>
     );

@@ -5,17 +5,17 @@ function Allrequests() {
     <div>
      
 
-<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
+<div className=" shadow-md mx-10 rounded-lg bg-white p-8">
+    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded-lg">
+        <thead className="text-xs text-white bg-blue-400 uppercase dark:text-gray-400">
             <tr>
-                <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                <th scope="col" className="px-6 py-3 bg-blue-400 dark:bg-gray-800">
                     Request
                 </th>
                 <th scope="col" className="px-6 py-3">
                     Institution
                 </th>
-                <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                <th scope="col" className="px-6 py-3 bg-blue-400 dark:bg-gray-800">
                     Date
                 </th>
                 <th scope="col" className="px-6 py-3">
@@ -36,7 +36,7 @@ function Allrequests() {
                     2023-09-12
                 </td>
                 <td className="px-6 py-4">
-                <i class="fa-solid fa-circle text-green-300"></i>  Verified
+                <i class="fa-solid fa-circle text-green-300 "></i>  Verified
                 </td>
             </tr>
             <tr className="border-b border-gray-200 dark:border-gray-700">

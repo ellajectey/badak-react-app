@@ -5,7 +5,7 @@ import '../index.css';
 function Navbar() {
     return (
         <div>
-          <nav className="flex justify-between items-center bg-white w-auto text-leftpx-20">
+          <nav className="flex justify-between items-center bg-white w-auto text-left px-20">
                 {/* Navbar */}
                 <h3>Demandez Une Verification</h3>
                 <div className="w-30 rounded-lg bg-gray-100 ">
