@@ -3,7 +3,7 @@ import React from "react";
 function Allrequests() {
   return (
     <div>
-     
+     {/* Requests table to show all requests done by the student/user */}
 
 <div className=" shadow-md mx-10 rounded-lg bg-white p-8">
     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded-lg">
