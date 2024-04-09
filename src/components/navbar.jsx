@@ -7,7 +7,7 @@ function Navbar() {
       <nav className="flex items-center justify-content:space-between bg-white w-auto text-left px-10 mx-none">
         {/* Navbar */}
         <h3 className="px-8">Demandez Une Verification</h3>
-        <div className="w-30 rounded-lg bg-gray-100 ">
+        <div className="w-auto rounded-lg bg-gray-100 ">
           <i class="fa-solid fa-magnifying-glass w-20 text-blue-600 px-4 py-4 text-center"></i>
           <input
             type="text"
