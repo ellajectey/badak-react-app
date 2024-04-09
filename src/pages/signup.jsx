@@ -3,7 +3,7 @@ import Registercard from '../components/registercard';
 
 function Signup() {
     return (
-        <div className="bg-gray-700">
+        <div className="bg-gradient-to-r from-cyan-100 to-sky-50">
             {/* Registration page */}
             <Registercard/>
         </div>

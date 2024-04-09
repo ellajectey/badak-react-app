@@ -1,9 +1,11 @@
 import React from "react";
 import "../index.css";
+import Navbar from "./navbar";
 
 function Container() {
   return (
     <div>
+      <Navbar/>
       <div className="m-8 bg-white absolute py-8 pl-8 pr-8 overflow-hidden w-auto min-h-full">
         {/* Container */}
         <div>
