@@ -3,6 +3,7 @@ import "../index.css";
 import Navbar from "./navbar";
 
 function Container() {
+
   return (
     <div>
       <Navbar/>
@@ -48,7 +49,9 @@ function Container() {
             <hr />
           </div>
           <div className="grid grid-cols-2 gap-x-24 ">
+            <form>
             <div className="bottom-left">
+
               <label className="text-sm">Nom Complet</label>
               <br />
               <input
@@ -96,6 +99,7 @@ function Container() {
                 <br />
               </div>
             </div>
+            </form>
             <div className="border-dashed border border-yellow-300 rounded-lg inline-block px-20 py-10 text-center">
               <i className="fas fa-cloud-upload-alt text-40 text-blue-400"></i>
               <h4>Selectionez un fischez ou glissez-deposez ici</h4>
@@ -112,7 +116,7 @@ function Container() {
             </div>
           </div>
         </div>
-        {/* submit request */}
+        {/* submit request  button*/}
         <div className="text-right mr-8">
           <button
             type="submit"
