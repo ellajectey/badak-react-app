@@ -3,6 +3,7 @@ import "../index.css";
 import Navbar from "./navbar";
 
 function Container() {
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -24,6 +25,7 @@ function Container() {
     // Handle form submission,\\ eg; submit data to backend
     console.log(formData);
   };
+
 
   return (
     <div>
@@ -70,6 +72,7 @@ function Container() {
             <hr />
           </div>
           <div className="grid grid-cols-2 gap-x-24 ">
+
             <div className="max-w-md mx-auto">
               <form
                 id="myForm"
@@ -201,7 +204,7 @@ function Container() {
                   </select>
                 </div> */}
               </form>
-            </div>
+            
             <div className="border-dashed border border-yellow-300 rounded-lg inline-block px-20 py-10 text-center">
               <i className="fas fa-cloud-upload-alt text-40 text-blue-400"></i>
               <h4>Selectionez un fischez ou glissez-deposez ici</h4>
@@ -218,7 +221,7 @@ function Container() {
             </div>
           </div>
         </div>
-        {/* submit request */}
+        {/* submit request  button*/}
         <div className="text-right mr-8">
           <button
             type="submit"
