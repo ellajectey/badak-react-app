@@ -99,7 +99,7 @@ function Container() {
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="email"
                   >
-                    Email
+                    email
                   </label>
                   <input
                     className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
@@ -181,7 +181,7 @@ function Container() {
                     required
                   />
                 </div>
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="status"
@@ -199,7 +199,7 @@ function Container() {
                     <option value="not verified">Non vérifié</option>
                     <option value="denied">Dénié</option>
                   </select>
-                </div>
+                </div> */}
               </form>
             </div>
             <div className="border-dashed border border-yellow-300 rounded-lg inline-block px-20 py-10 text-center">
