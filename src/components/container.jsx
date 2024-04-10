@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "../index.css";
 import Navbar from "./navbar";
 
 function Container() {
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    certificateType: "",
+    university: "",
+    status: "not verified",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission,\\ eg; submit data to backend
+    console.log(formData);
+  };
+
+
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="m-8 bg-white absolute py-8 pl-8 pr-8 overflow-hidden w-auto min-h-full">
         {/* Container */}
         <div>
@@ -49,57 +72,139 @@ function Container() {
             <hr />
           </div>
           <div className="grid grid-cols-2 gap-x-24 ">
-            <form>
-            <div className="bottom-left">
 
-              <label className="text-sm">Nom Complet</label>
-              <br />
-              <input
-                type="text"
-                className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
-              />
-              <br />
-              <br />
-              <label className="text-sm">Email</label>
-              <br />
-              <input
-                type="text"
-                className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
-              />
-              <br />
-              <br />
-              <br />
-              <br />
-              <h3>Quel est votre Diploma?</h3>
-              <br />
-              <hr />
-              <br />
-              <div className="pl-16">
-                <input
-                  type="radio"
-                  id="baccalaureat"
-                  name="diplome"
-                  value="Baccalaureat"
-                />
-                <label htmlFor="baccalaureat"> Baccalaureat</label>
-                <br />
-                <input type="radio" id="bts" name="diplome" value="BTS" />
-                <label htmlFor="bts"> BTS</label>
-                <br />
-                <input
-                  type="radio"
-                  id="licence"
-                  name="diplome"
-                  value="Licence"
-                />
-                <label htmlFor="licence"> Licence</label>
-                <br />
-                <input type="radio" id="master" name="diplome" value="Master" />
-                <label htmlFor="master"> Master</label>
-                <br />
-              </div>
-            </div>
-            </form>
+            <div className="max-w-md mx-auto">
+              <form
+                id="myForm"
+                onSubmit={handleSubmit}
+                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+              >
+                <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="fullName"
+                  >
+                    Nom Complet
+                  </label>
+                  <input
+                    className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
+                    id="fullName"
+                    type="text"
+                    placeholder="Nom Complet"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="email"
+                  >
+                    email
+                  </label>
+                  <input
+                    className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
+                    id="email"
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold">
+                    Quel est votre Diplôme?
+                  </h3>
+                  <hr className="mt-2 mb-4" />
+                  <div className="pl-16">
+                    <input
+                      type="radio"
+                      id="baccalaureat"
+                      name="certificateType"
+                      value="Baccalaureat"
+                      className="mr-2"
+                      checked={formData.certificateType === "Baccalaureat"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="baccalaureat"> Baccalaureat</label>
+                    <br />
+                    <input
+                      type="radio"
+                      id="bts"
+                      name="certificateType"
+                      value="BTS"
+                      className="mr-2"
+                      checked={formData.certificateType === "BTS"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="bts"> BTS</label>
+                    <br />
+                    <input
+                      type="radio"
+                      id="licence"
+                      name="certificateType"
+                      value="Licence"
+                      className="mr-2"
+                      checked={formData.certificateType === "Licence"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="licence"> Licence</label>
+                    <br />
+                    <input
+                      type="radio"
+                      id="master"
+                      name="certificateType"
+                      value="Master"
+                      className="mr-2"
+                      checked={formData.certificateType === "Master"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="master"> Master</label>
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="email"
+                  >
+                    université
+                  </label>
+                  <input
+                    className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
+                    id="université"
+                    type="text"
+                    placeholder="Université"
+                    name="université"
+                    value={formData.university}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                {/* <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="status"
+                  >
+                    statut
+                  </label>
+                  <select
+                    className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
+                    id="status"
+                    name="status"
+                    value={formData.status}
+                    onChange={handleChange}
+                  >
+                    <option value="verified">Vérifié</option>
+                    <option value="not verified">Non vérifié</option>
+                    <option value="denied">Dénié</option>
+                  </select>
+                </div> */}
+              </form>
+            
             <div className="border-dashed border border-yellow-300 rounded-lg inline-block px-20 py-10 text-center">
               <i className="fas fa-cloud-upload-alt text-40 text-blue-400"></i>
               <h4>Selectionez un fischez ou glissez-deposez ici</h4>
@@ -121,6 +226,7 @@ function Container() {
           <button
             type="submit"
             className="bg-blue-500 text-white rounded-lg border-none px-8 py-4 m-4"
+            form="myForm"
           >
             Envoyer ma demande
           </button>
