@@ -2,7 +2,7 @@ import React from "react";
 import img from "../assets/badak-logo.png";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import FormikControl from "./FormikControl";
+import FormikControl from "./formAuth/FormikControl";
 import { Link } from "react-router-dom";
 
 function Registercard() {
