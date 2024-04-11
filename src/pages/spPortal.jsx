@@ -3,6 +3,7 @@ import Container from '../components/container.jsx';
 import '../index.css';
 import Navbar from '../components/navbar.jsx';
 import Sidebar from '../components/sidebar.jsx';
+import IdleTimerContainer from '../components/IdleTimerContainer.js';
 
 
 function SpPortal() {
@@ -13,7 +14,7 @@ function SpPortal() {
             <div className="flex w-auto">  
             <Sidebar/><Container/>  
             </div>
-            
+            {/* <IdleTimerContainer></IdleTimerContainer> */}
         </div>
     );
 }
