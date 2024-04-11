@@ -1,7 +1,27 @@
 import React from "react";
 import img from "../assets/badak-logo.png";
+import { Formik,Form } from "formik";
+import * as Yup from "yup";
 
-function Logincard(props) {
+import FormikControl from "./formAuth/FormikControl";
+
+import { Link } from "react-router-dom";
+
+function Logincard() {
+
+  const initialValues= {
+    email:'',
+    password:''
+  }
+
+  const validationSchema = Yup.object({
+    email:Yup.string().email('Invalid email format').required('Required'),
+    password:Yup.string().required('Required')
+  })
+
+  const onSubmit = values => {
+    console.log('Form data',values);
+  }
   return (
     <div>
       <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6">
@@ -14,24 +34,26 @@ function Logincard(props) {
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form>
-              <div>
-                <label
-                  for="email"
-                  className="block text-sm font-medium leading-5  text-gray-700"
-                >
-                  Email address
-                </label>
+  
+    
+    <Formik initialValues={initialValues} validationSchema ={validationSchema} onSubmit={onSubmit}>
+            {
+              formik =>{ 
+                return <Form>
+    <div>
+        
                 <div className="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    id="email"
+                  
+                  <FormikControl
+                    control="input"
+                    type="email"
+                    label="Email"
                     name="email"
                     placeholder="user@example.com"
-                    type="email"
-                    required=""
-                    value=""
+                    
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                   />
+                  
                   <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                     <svg
                       className="h-5 w-5 text-red-500"
@@ -49,47 +71,15 @@ function Logincard(props) {
               </div>
 
               <div className="mt-6">
-                <label
-                  for="password"
-                  className="block text-sm font-medium leading-5 text-gray-700"
-                >
-                  Password
-                </label>
+                
                 <div className="mt-1 rounded-md shadow-sm">
-                  <input
-                    id="password"
+                  <FormikControl 
+                  control="input"
                     name="password"
+                    label="Password"
                     type="password"
-                    required=""
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                   />
-                </div>
-              </div>
-
-              <div className="mt-6 flex items-center justify-between">
-                <div className="flex items-center">
-                  <input
-                    id="remember_me"
-                    name="remember"
-                    type="checkbox"
-                    value="1"
-                    className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
-                  />
-                  <label
-                    for="remember_me"
-                    className="ml-2 block text-sm leading-5 text-gray-900"
-                  >
-                    Remember me
-                  </label>
-                </div>
-
-                <div className="text-sm leading-5">
-                  <a
-                    href="#"
-                    className="font-medium text-blue-500 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                  >
-                    Forgot your password?
-                  </a>
                 </div>
               </div>
 
@@ -97,27 +87,35 @@ function Logincard(props) {
                 <span className="block w-full rounded-md shadow-sm">
                   <button
                     type="submit"
+                    disabled={!formik.isValid}
                     className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                  Link to="/"
                   >
-                    Sign in
+                   <Link to="/" >Sign in</Link>
                   </button>
                 </span>
+
                 <p className="mt-2 text-center text-sm leading-5 text-gray-500 max-w">
                   Or
                   <br />
-                  <a
-                    href="#"
+                  <Link
+                    to="/register"
                     className="text-sm text-blue-500 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150"
                   >
                     create a new acccount
-                  </a>
+                  </Link>
                 </p>
               </div>
-            </form>
+            </Form>
+                }
+              }
+              </Formik>
           </div>
+     
         </div>
       </div>
     </div>
+    
   );
 }
 
