@@ -4,16 +4,20 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormikControl from "./formAuth/FormikControl";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Registercard() {
-  const initialValues = {
+
+  
+  const [initialValues, setInitialValues] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
-  };
+  });
 
+  
   const validationSchema = Yup.object({
     firstName: Yup.string().label("Enter first name").required("Required"),
     lastName: Yup.string().label(" Enter last name ").required("Required"),
@@ -24,9 +28,47 @@ function Registercard() {
       .required("Required"),
   });
 
-  const onSubmit = (values) => {
-    console.log("Form data", values);
-  };
+ 
+  function updateInitialValues(key, value){
+      let modifiedInitialValues = {...initialValues};
+      modifiedInitialValues[key] = value;
+      setInitialValues(modifiedInitialValues);
+  }
+
+  async function onSubmit(values){
+    
+    let body = {
+      firstName:values.firstName,
+      lastName: values.lastName,
+      email: values.email,
+      password: values.password
+    }
+
+    console.log('register body: ', body);
+  
+      try {
+      
+      const response = await fetch(`${process.env.REACT_APP_BADAK_API}/user`,{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            // "Authorization": "Bearer xxx",
+
+          },
+          body: JSON.stringify(body),
+          
+        });       
+        
+        let responseData = await response.json()
+        console.log(responseData)
+        // const token = responseData.accessToken
+        
+        
+      } catch (error) {
+        console.log(error);
+      }
+  }
+
   return (
     <div>
       <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-4 sm:px-6 lg:px-8">
@@ -50,7 +92,7 @@ function Registercard() {
                     <div className="mt-1 relative rounded-md shadow-sm">
                       <FormikControl
                         control="input"
-                        type="firstName"
+                        type="text"
                         name="firstName"
                         placeholder="first name"
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
@@ -62,9 +104,9 @@ function Registercard() {
                           viewBox="0 0 20 20"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>
                       </div>
@@ -74,7 +116,7 @@ function Registercard() {
                     <div className="mt-1 relative rounded-md shadow-sm">
                       <FormikControl
                         control="input"
-                        type="lastName"
+                        type="text"
                         name="lastName"
                         placeholder="last name"
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
@@ -86,9 +128,9 @@ function Registercard() {
                           viewBox="0 0 20 20"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>
                       </div>
@@ -112,9 +154,9 @@ function Registercard() {
                           viewBox="0 0 20 20"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                         </svg>
                       </div>
@@ -149,10 +191,13 @@ function Registercard() {
                     <span className="block w-full rounded-md shadow-sm">
                       <button
                         type="submit"
+                        // onClick={() => {submitRegister()}} 
                         disabled={!formik.isValid}
                         className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                       >
-                        <Link to="/login">Register</Link>
+                        {/* <Link to="/login"> */}
+                          Register
+                          {/* </Link> */}
                       </button>
                     </span>
                     <p className="mt-2 text-center text-sm leading-5 text-gray-500 max-w">

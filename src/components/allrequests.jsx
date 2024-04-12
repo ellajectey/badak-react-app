@@ -10,10 +10,10 @@ function Allrequests() {
         <thead className="text-xs text-white bg-blue-400 uppercase dark:text-gray-400">
             <tr>
                 <th scope="col" className="px-6 py-3 bg-blue-400 dark:bg-gray-800">
-                    Request
+                    Certificate Type
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Institution
+                    University
                 </th>
                 <th scope="col" className="px-6 py-3 bg-blue-400 dark:bg-gray-800">
                     Date

@@ -57,7 +57,7 @@ function Userdetails() {
 
           <div className="text-left px-8">
             <label className="text-sm text-gray-400">Degree </label>
-            <p>Student's degree type</p>
+            <p>Student's certificate type</p>
           </div>
         </div>
 
