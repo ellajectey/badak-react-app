@@ -2,14 +2,11 @@ import React from "react";
 import "../index.css";
 import img from "../assets/badak-logo.png";
 import { Link } from "react-router-dom";
-// import {useNavigate} from react-router-Dom;
+// import useSignOut from 'react-auth-kit/hooks/useSignOut';
 
 function Sidebar() {
-  // const Navigate = useNavigate()
-  // const Logout= () =>{
-  //   window.localStorage.removeItem("isLoggedIn")
-  //   Navigate('/')
-  // }
+
+  // const signOut = useSignOut()
   return (
     <div>
       <div className="flex h-full bg-gray-100 ">
@@ -67,6 +64,7 @@ function Sidebar() {
               
               <Link
                 to="/login"
+                // onClick={() => signOut()}
                 className="flex items-center px-4 py-4 mt-2 text-black hover:bg-blue-200 text-black"
               >
                 <i class="fas fa-sign-out-alt h-6 w-6 mr-2 text-blue-400"></i>
