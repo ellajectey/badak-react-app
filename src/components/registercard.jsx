@@ -28,6 +28,7 @@ function Registercard() {
       .required("Required"),
   });
 
+  const [visible,setVisible] = useState(true);
  
   function updateInitialValues(key, value){
       let modifiedInitialValues = {...initialValues};
@@ -52,7 +53,7 @@ function Registercard() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // "Authorization": "Bearer xxx",
+            
 
           },
           body: JSON.stringify(body),
@@ -61,7 +62,7 @@ function Registercard() {
         
         let responseData = await response.json()
         console.log(responseData)
-        // const token = responseData.accessToken
+        
         
         
       } catch (error) {
@@ -79,7 +80,7 @@ function Registercard() {
           </h2>
         </div>
 
-        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="mt-8 sm:mx-auto sm:w-auto sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <Formik
               initialValues={initialValues}
@@ -89,13 +90,13 @@ function Registercard() {
               {(formik) => {
                 return <Form>
                   <div>
-                    <div className="mt-1 relative rounded-md shadow-sm">
+                    <div className="mt-1 relative rounded-md ">
                       <FormikControl
                         control="input"
                         type="text"
                         name="firstName"
                         placeholder="first name"
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        className="appearance-none block w-80 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                       />
                       <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                         <svg
@@ -113,13 +114,14 @@ function Registercard() {
                     </div>
                   </div>
                   <div>
-                    <div className="mt-1 relative rounded-md shadow-sm">
+                    <br/>
+                    <div className="mt-1 relative rounded-md ">
                       <FormikControl
                         control="input"
                         type="text"
                         name="lastName"
                         placeholder="last name"
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        className="appearance-none block w-80 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                       />
                       <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                         <svg
@@ -138,13 +140,13 @@ function Registercard() {
                   </div>
 
                   <div className="mt-6">
-                    <div className="mt-1 relative rounded-md shadow-sm">
+                    <div className="mt-1 relative rounded-md ">
                       <FormikControl
                         control="input"
                         type="email"
                         name="email"
                         placeholder="user@example.com"
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5
+                        className="appearance-none block w-80 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5
                 "
                       />
                       <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
@@ -164,36 +166,46 @@ function Registercard() {
                   </div>
 
                   <div className="mt-6">
-                    <div className="mt-1 rounded-md shadow-sm">
+                    <div className=" flex mt-1 rounded-md ">
                       <FormikControl
                         control="input"
-                        type="password"
+                        type={visible ? "text":"password"}
                         name="password"
                         placeholder="password"
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        className="appearance-none block w-80 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                       />
+                      <div className="flex items-center text-center justify-center p-2 " onClick={()=> setVisible(!visible)}> 
+                          {
+                            visible ?  <i class="fas fa-eye"></i> : <i class="fas fa-eye-slash"></i>
+                          }
+                        </div>
                     </div>
                   </div>
 
                   <div className="mt-6">
-                    <div className="mt-1 rounded-md shadow-sm">
+                    <div className=" flex mt-1 rounded-md ">
                       <FormikControl
                         control="input"
-                        type="password"
+                        type={visible ? "text":"password"}
                         name="confirmPassword"
                         placeholder="Confirm Password"
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        className="appearance-none block w-80 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                       />
+                      <div className="flex items-center text-center justify-center p-2 " onClick={()=> setVisible(!visible)}> 
+                          {
+                            visible ?  <i class="fas fa-eye"></i> : <i class="fas fa-eye-slash"></i>
+                          }
+                        </div>
                     </div>
                   </div>
                   <br />
                   <div className="mt-2 ">
-                    <span className="block w-full rounded-md shadow-sm">
+                    <span className="block w-80 rounded-md ">
                       <button
                         type="submit"
                         // onClick={() => {submitRegister()}} 
                         disabled={!formik.isValid}
-                        className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                        className="w-80 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                       >
                         {/* <Link to="/login"> */}
                           Register
