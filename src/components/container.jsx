@@ -28,7 +28,7 @@ function Container() {
   return (
     <div>
       <Navbar />
-      <div className="m-8 bg-white absolute py-8 pl-8 pr-8 overflow-hidden w-auto min-h-full">
+      <div className=" flex m-8 bg-white py-8 pl-8 pr-8 overflow-hidden w-auto h-auto ">
         {/* Container */}
         <div>
           <div className="text-left grid grid-cols-2 gap-x-24 gap-y-0">
@@ -50,10 +50,8 @@ function Container() {
             </div>
           </div>
           <div className="text-center text-blue-500 p-20">
-            <br />
-            <br />
             <label htmlFor="photo">
-              <i className="fas fa-camera p-20 rounded-full bg-gray-100 text-gray-500 text-center "></i>
+              <i className="fas fa-camera text-gray-500 text-center w-24 bg-gray-100 justify-center py-10 rounded-full "></i>
               <br />
               <br />
               importer une image
@@ -202,37 +200,40 @@ function Container() {
                 </div> */}
               </form>
             </div>
-            <div className="border-dashed border border-yellow-300 rounded-lg inline-block px-20 py-10 text-center">
-              <i className="fas fa-cloud-upload-alt text-40 text-blue-400"></i>
-              <h4>Selectionez un fischez ou glissez-deposez ici</h4>
-              <p className="text-sm text-blue-900">
-                En format PDF,la taille du fichier doit être maximale de 10 Mo{" "}
-              </p>
+            <div>
+              <div className="border-dashed border border-yellow-300 rounded-lg inline-block px-10 py-10 text-center">
+                <i className="fas fa-cloud-upload-alt text-40 text-blue-400"></i>
+                <h4>Selectionez un fischez ou glissez-deposez ici</h4>
+                <p className="text-sm text-blue-900">
+                  En format PDF,la taille du fichier doit être maximale de 10 Mo{" "}
+                </p>
+                <br />
+                <button className="bg-yellow-500 text-white rounded-lg border-none px-4 py-4">
+                  télécharger
+                  {/* file upload button*/}
+                </button>
+              </div>
               <br />
-              <button className="bg-yellow-500 text-white rounded-lg border-none px-4 py-4">
-                télécharger
-                {/* file upload button*/}
-              </button>
               <br />
               <br />
+              {/* submit request */}
+              <div className="flex inline-flex justify-center text-sm">
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white rounded-lg border-none px-4 py-4 m-2"
+                  form="myForm"
+                >
+                  Envoyer ma demande
+                </button>
+                <button
+                  type="reset"
+                  className="bg-white border border-red-300 rounded-lg px-4 py-4 m-2"
+                >
+                  Annuler
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        {/* submit request */}
-        <div className="text-right mr-8">
-          <button
-            type="submit"
-            className="bg-blue-500 text-white rounded-lg border-none px-8 py-4 m-4"
-            form="myForm"
-          >
-            Envoyer ma demande
-          </button>
-          <button
-            type="reset"
-            className="bg-white border border-red-300 rounded-lg px-8 py-4 m-4"
-          >
-            Annuler
-          </button>
         </div>
       </div>
     </div>
