@@ -35,7 +35,7 @@ function Container() {
             <div className="p-8 text-right">
               <label htmlFor="file">Etudiante:</label>
               <br />
-              <progress id="file" value="100" max="100">
+              <progress id="file" value="100" max="100" className="bg-blue-400 rounded-lg">
                 {" "}
                 100%{" "}
               </progress>
@@ -43,7 +43,7 @@ function Container() {
             <div className="p-8 text-left">
               <label htmlFor="file">Partenaire:</label>
               <br />
-              <progress id="file" value="0" max="100">
+              <progress id="file" value="0" max="100" className="bg-blue-400 rounded-lg">
                 {" "}
                 0%{" "}
               </progress>

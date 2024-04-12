@@ -33,7 +33,7 @@ function Userdetails() {
         <div className="flex inline-block justify-between align-items:center">
           <h2 className="text-left px-8">Student's Information</h2>
           <button className="border border-blue-400 p-2 rounded-lg">
-            <i class="fa-solid fa-pencil"></i> Edit
+            <i className="fa-solid fa-pencil"></i> Edit
           </button>
         </div>
         <br />

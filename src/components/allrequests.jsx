@@ -42,7 +42,7 @@ function Allrequests() {
                 2023-09-12
               </td>
               <td className="px-6 py-4">
-                <i class="fa-solid fa-circle text-green-300 "></i> Verified
+                <i className="fa-solid fa-circle text-green-300 "></i> Verified
               </td>
             </tr>
             <tr className="border-b border-gray-200 dark:border-gray-700">
@@ -57,7 +57,7 @@ function Allrequests() {
                 2024-01-01
               </td>
               <td className="px-6 py-4">
-                <i class="fa-solid fa-circle text-red-500"></i> Denied
+                <i className="fa-solid fa-circle text-red-500"></i> Denied
               </td>
             </tr>
             <tr className="border-b border-gray-200 dark:border-gray-700">
@@ -72,7 +72,7 @@ function Allrequests() {
                 2024-03-13
               </td>
               <td className="px-6 py-4">
-                <i class="fa-solid fa-circle text-gray-400"></i> Not verified
+                <i className="fa-solid fa-circle text-gray-400"></i> Not verified
               </td>
             </tr>
           </tbody>

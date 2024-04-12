@@ -30,11 +30,11 @@ function Registercard() {
 
   const [visible,setVisible] = useState(true);
  
-  function updateInitialValues(key, value){
-      let modifiedInitialValues = {...initialValues};
-      modifiedInitialValues[key] = value;
-      setInitialValues(modifiedInitialValues);
-  }
+  // function updateInitialValues(key, value){
+  //     let modifiedInitialValues = {...initialValues};
+  //     modifiedInitialValues[key] = value;
+  //     setInitialValues(modifiedInitialValues);
+  // }
 
   async function onSubmit(values){
     
@@ -53,7 +53,6 @@ function Registercard() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            
 
           },
           body: JSON.stringify(body),
@@ -176,7 +175,7 @@ function Registercard() {
                       />
                       <div className="flex items-center text-center justify-center p-2 " onClick={()=> setVisible(!visible)}> 
                           {
-                            visible ?  <i class="fas fa-eye"></i> : <i class="fas fa-eye-slash"></i>
+                            visible ?  <i className="fas fa-eye"></i> : <i class="fas fa-eye-slash"></i>
                           }
                         </div>
                     </div>
