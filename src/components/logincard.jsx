@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import img from "../assets/badak-logo.png";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-
+import { useNavigate } from "react-router-dom";
 import FormikControl from "./formAuth/FormikControl";
 
 import { Link } from "react-router-dom";
@@ -12,6 +12,8 @@ function Logincard() {
     email: "",
     password: "",
   };
+
+  const navigate = useNavigate();
 
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email format").required("Required"),
@@ -34,19 +36,28 @@ function Logincard() {
         body: JSON.stringify(body),
         headers: {
           "Content-Type": "application/json",
+        
         },
       });
       let responseData = await response.json();
       console.log(responseData);
       const token = responseData.accessToken;
       console.log(token);
+      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('user', JSON.stringify(responseData));
+      if (token)
+      {
+        navigate("/");
+      }
+      else{
+        console.log("user not found")
+      }
+     
     } catch (error) {
       console.log(error);
     }
   }
-  // const onSubmit = (values) => {
-  //   console.log("Form data", values);
-  // };
+  
   return (
     <div>
       <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6">
@@ -110,7 +121,7 @@ function Logincard() {
                           {visible ? (
                             <i className="fas fa-eye"></i>
                           ) : (
-                            <i class="fas fa-eye-slash"></i>
+                            <i className="fas fa-eye-slash"></i>
                           )}
                         </div>
                       </div>

@@ -28,25 +28,31 @@ function Container() {
   return (
     <div>
       <Navbar />
-      <div className=" flex m-8 bg-white py-8 pl-8 pr-8 overflow-hidden w-auto h-auto ">
+      <div className="flex m-8 bg-white py-8 pl-8 pr-8 overflow-hidden w-auto h-auto ">
         {/* Container */}
         <div>
           <div className="text-left grid grid-cols-2 gap-x-24 gap-y-0">
             <div className="p-8 text-right">
               <label htmlFor="file">Etudiante:</label>
               <br />
-              <progress id="file" value="100" max="100" className="bg-blue-400 rounded-lg">
-                {" "}
-                100%{" "}
-              </progress>
+              {/* progress bar */}
+              <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 ml-auto ">
+                <div
+                  class="bg-blue-500 h-2.5 rounded-full "
+                  style={{ width: "100%" }}
+                ></div>
+              </div>
             </div>
             <div className="p-8 text-left">
               <label htmlFor="file">Partenaire:</label>
               <br />
-              <progress id="file" value="0" max="100" className="bg-blue-400 rounded-lg">
-                {" "}
-                0%{" "}
-              </progress>
+              {/* progress bar */}
+              <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mr-auto ">
+                <div
+                  class="bg-blue-500 h-2.5 rounded-full "
+                  style={{ width: "0%" }}
+                ></div>
+              </div>
             </div>
           </div>
           <div className="text-center text-blue-500 p-20">
