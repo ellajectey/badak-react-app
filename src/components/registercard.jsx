@@ -3,7 +3,7 @@ import img from "../assets/badak-logo.png";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormikControl from "./formAuth/FormikControl";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function Registercard() {
@@ -17,6 +17,7 @@ function Registercard() {
     confirmPassword: "",
   });
 
+  const navigate = useNavigate();
   
   const validationSchema = Yup.object({
     firstName: Yup.string().label("Enter first name").required("Required"),
@@ -30,11 +31,7 @@ function Registercard() {
 
   const [visible,setVisible] = useState(true);
  
-  // function updateInitialValues(key, value){
-  //     let modifiedInitialValues = {...initialValues};
-  //     modifiedInitialValues[key] = value;
-  //     setInitialValues(modifiedInitialValues);
-  // }
+
 
   async function onSubmit(values){
     
@@ -44,12 +41,12 @@ function Registercard() {
       email: values.email,
       password: values.password
     }
-
+    
     console.log('register body: ', body);
   
       try {
       
-      const response = await fetch(`${process.env.REACT_APP_BADAK_API}/user`,{
+      const response = await fetch(`${process.env.REACT_APP_BADAK_API}/users`,{
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -59,9 +56,9 @@ function Registercard() {
           
         });       
         
-        let responseData = await response.json()
-        console.log(responseData)
-        
+        let responseData = await response.json();
+        console.log(responseData);
+        navigate("/login");
         
         
       } catch (error) {
@@ -175,7 +172,7 @@ function Registercard() {
                       />
                       <div className="flex items-center text-center justify-center p-2 " onClick={()=> setVisible(!visible)}> 
                           {
-                            visible ?  <i className="fas fa-eye"></i> : <i class="fas fa-eye-slash"></i>
+                            visible ?  <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>
                           }
                         </div>
                     </div>
@@ -192,7 +189,7 @@ function Registercard() {
                       />
                       <div className="flex items-center text-center justify-center p-2 " onClick={()=> setVisible(!visible)}> 
                           {
-                            visible ?  <i class="fas fa-eye"></i> : <i class="fas fa-eye-slash"></i>
+                            visible ?  <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>
                           }
                         </div>
                     </div>
@@ -202,13 +199,10 @@ function Registercard() {
                     <span className="block w-80 rounded-md ">
                       <button
                         type="submit"
-                        // onClick={() => {submitRegister()}} 
                         disabled={!formik.isValid}
                         className="w-80 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                       >
-                        {/* <Link to="/login"> */}
                           Register
-                          {/* </Link> */}
                       </button>
                     </span>
                     <p className="mt-2 text-center text-sm leading-5 text-gray-500 max-w">
