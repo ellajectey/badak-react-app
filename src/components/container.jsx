@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios"; 
 import "../index.css";
-import Navbar from "./navbar";
+import Navbar from '../components/navbar'
 
 function Container() {
   const [formData, setFormData] = useState({
@@ -19,10 +20,33 @@ function Container() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission,\\ eg; submit data to backend
-    console.log(formData);
+  // connecting to backend
+    try {
+      const response = await axios({
+        method: "post",
+        url: "http://localhost:4000/requests",
+        data: formData,
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      });
+
+  
+
+      console.log("Form submitted successfully:", response.data);
+      // Optionally, you can reset the form data after successful submission
+      setFormData({
+        fullName: "",
+        email: "",
+        certificateType: "",
+        university: "",
+        status: "not verified",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -185,25 +209,6 @@ function Container() {
                     required
                   />
                 </div>
-                {/* <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
-                    htmlFor="status"
-                  >
-                    statut
-                  </label>
-                  <select
-                    className="p-2 rounded-lg border border-gray-500 w-80 focus:outline-none"
-                    id="status"
-                    name="status"
-                    value={formData.status}
-                    onChange={handleChange}
-                  >
-                    <option value="verified">Vérifié</option>
-                    <option value="not verified">Non vérifié</option>
-                    <option value="denied">Dénié</option>
-                  </select>
-                </div> */}
               </form>
             </div>
             <div>
