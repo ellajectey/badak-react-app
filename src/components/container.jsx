@@ -33,10 +33,7 @@ function Container() {
         },
       });
 
-      // axios.post(
-      //   process.env.REACT_APP_BADAK_API, // Use environment variable for API URL
-      //   formData
-      // );
+  
 
       console.log("Form submitted successfully:", response.data);
       // Optionally, you can reset the form data after successful submission
