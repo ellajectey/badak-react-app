@@ -29,7 +29,7 @@ function Registercard() {
       .required("Required"),
   });
 
-  const [visible,setVisible] = useState(true);
+  const [visible,setVisible] = useState(false);
  
 
 

@@ -20,7 +20,7 @@ function Logincard() {
     password: Yup.string().required("Required"),
   });
 
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   async function onSubmit(values) {
     let body = {
@@ -47,7 +47,7 @@ function Logincard() {
       sessionStorage.setItem('user', JSON.stringify(responseData));
       if (token)
       {
-        navigate("/");
+        navigate("/portal");
       }
       else{
         console.log("user not found")
