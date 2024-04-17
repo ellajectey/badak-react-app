@@ -8,13 +8,13 @@ function Allrequests() {
     const fetchRequests = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const user = sessionStorage.getItem("user");
+        const userEmail = sessionStorage.getItem("userEmail");
 
-        if (!token) {
+        if (!token || !userEmail) {
           throw new Error("User is not authenticated");
         }
 
-        const response = await fetch(`${process.env.REACT_APP_BADAK_API}/requests?email=${user}`, {
+        const response = await fetch(`${process.env.REACT_APP_BADAK_API}/requests?email=${userEmail}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
