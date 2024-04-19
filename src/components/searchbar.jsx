@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Searchbar(props) {
+function Searchbar({updateSearchInput}) {
     return (
         <div>
             <label
@@ -8,6 +8,7 @@ function Searchbar(props) {
         for="search-bar"
       >
         <input
+        onChange={(e) => updateSearchInput(e.target.value)}
           id="search-bar"
           placeholder="Find student"
           class="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white"

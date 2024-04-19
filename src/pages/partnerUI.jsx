@@ -5,12 +5,14 @@ import axios from "axios";
 
 function PartnerUI(props) {
   const [requests, setRequests] = useState([]);
+  const [requestCopy,setRequestCopy] = useState([]);
 
   useEffect(() => {
     const fetchRequests = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_BADAK_API}/partner-requests`);
         setRequests(response.data);
+        setRequestCopy(response.data);
       } catch (error) {
         console.error('Error fetching requests:', error);
       }
@@ -19,10 +21,34 @@ function PartnerUI(props) {
     fetchRequests();
   }, []);
 
+  function updateSearchInput(newInput){
+    let fullList = [...requestCopy];
+    let newList = [];
+    fullList.forEach(request => {
+      let fullname = request.fullName?
+      request.fullName.toLowerCase():'-';
+      let certType = request.certificateType.toLowerCase();
+      let uni =request.university ?
+      request.university.toLowerCase():'-';
+      let stat = request.status ?
+      request.status.toLowerCase() :'-';
+
+      if(
+        fullname.includes(newInput.toLowerCase())||
+        certType.includes(newInput.toLowerCase())||
+        uni.includes(newInput.toLowerCase())||
+        stat.includes(newInput.toLowerCase())
+        
+      ){
+        newList.push(request);
+      }
+    });
+    newInput.length? setRequests(newList) : setRequests([...fullList])
+  }
   return (
     <>
       <Homenavbar />
-      <Searchbar/>
+      <Searchbar updateSearchInput={updateSearchInput}/>
       <div className="bg-gray-200 h-screen w-screen">
         <div className="grid gap-4 lg:gap-8 md:grid-cols-3 p-8 pt-20">
           {requests.map((request) => (
