@@ -11,7 +11,7 @@ function Profile() {
             {/* Profile page */}
             <Navbar/>
             <div className='flex justify-left mx-10 mt-8'>
-                <Link to="/"><button><i class="fa-solid fa-arrow-left text-blue-500 px-4"></i>Back</button></Link>
+                <Link to="/portal"><button><i class="fa-solid fa-arrow-left text-blue-500 px-4"></i>Back</button></Link>
             </div>
             <Userdetails/>
             <br/>
