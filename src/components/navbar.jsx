@@ -7,10 +7,10 @@ function Navbar() {
    
   return (
     <div>
-      <nav className="flex w-auto justify-between">
+      <nav className="flex w-auto ">
         {/* Navbar */}
 
-        <div className="flex justify-between h-16 bg-white border-b border-gray-200 w-full">
+        <div className="flex justify-between h-16 bg-white border-b border-gray-200 w-full ">
           <div className="flex items-center justify-between px-4">
             <h3 className="px-8 ">Demandez Une Verification</h3>
             <div className="flex w-full border rounded-lg  -center">
@@ -25,12 +25,12 @@ function Navbar() {
           <Link
            to="/profile">
           <div className="flex items-center pr-4">
-            <i className="fas fa-user-circle text-blue-600 px-4 text-center text-30"></i>
-            <div>
+            <i className="fas fa-user-circle text-blue-600 px-4 text-center text-2xl"></i>
+            <div className="justify-center py-4">
               <h4>{signedInUser.firstName}</h4>
               <p className="text-sm">{signedInUser.lastName}</p>
             </div>
-            <i className="fa-solid fa-caret-down w-20 text-blue-600 px-4 text-center pt-15"></i>
+            <i className="fa-solid fa-caret-down w-20 text-blue-600 px-4 text-center text-2xl pt-15"></i>
           </div>
           </Link>
         </div>

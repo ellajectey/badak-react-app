@@ -8,14 +8,14 @@ function Homenavbar() {
         <div>
             <header class="sticky inset-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-lg">
     <nav class="mx-auto flex max-w-6xl gap-8 px-6 transition-all duration-200 ease-in-out lg:px-12 py-4">
-        <div class="relative flex items-center">
+        <div class="relative flex items-center h-16">
             <a href="/">
-                <img  src={img} loading="lazy" width="40" height="20"/></a>
+                <img  src = {img}  className='w-40 h-25'/></a>
         </div>
         
         <div class="flex-grow"></div>
         <div class="hidden items-center justify-center gap-6 md:flex">
-            <Link href="/login" class="font-dm text-sm font-medium text-slate-700">Login</Link>
+            <Link to="/login" class="font-dm text-sm font-medium text-slate-700">Login</Link>
             <Link to="/register"
                 class="rounded-md bg-blue-500 px-3 py-1.5 font-dm text-sm font-medium text-white  transition-transform duration-200 ease-in-out hover:scale-[1.03]">
                     Sign up 

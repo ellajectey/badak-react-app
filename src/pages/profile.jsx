@@ -10,7 +10,7 @@ function Profile() {
         <div>
             {/* Profile page */}
             <Navbar/>
-            <div className='flex justify-left mx-10 mt-8'>
+            <div className='flex justify-left mx-10 my-8'>
                 <Link to="/portal"><button><i class="fa-solid fa-arrow-left text-blue-500 px-4"></i>Back</button></Link>
             </div>
             <Userdetails/>

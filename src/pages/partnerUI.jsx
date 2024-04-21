@@ -45,6 +45,18 @@ function PartnerUI(props) {
     });
     newInput.length? setRequests(newList) : setRequests([...fullList])
   }
+
+  function getStatusColor(status) {
+    if (status === "verified") {
+      return "green-400";
+    } else if (status === "denied") {
+      return "red-400";
+    } else if (status === "not verified") {
+      return "orange-400";
+    } else {
+      return "gray-400"; // default color
+    }
+  }
   return (
     <>
       <Homenavbar />
@@ -55,15 +67,14 @@ function PartnerUI(props) {
             <div key={request.id} className="relative p-6 rounded-2xl bg-white shadow">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 ">
-                  <div className="flex items-center space-x-1 rtl:space-x-reverse text-sm font-medium text-gray-600">
+                  <div className={`flex items-center space-x-1 rtl:space-x-reverse text-sm font-medium text-${getStatusColor(request.status)}`}>
                     <i className="fa-solid fa-circle text-gray-500"></i><span>{request.status}</span>
                   </div>
-                  <span>{request.email}</span>
-                  <hr className="text-gray-200"/>
                 </div>
+                <span className="text-gray-600 text-sm">{request.email}</span>
                 <div className="text-medium text-gray-900">{request.fullName}</div>
                 <div className="text-medium text-gray-900">{request.certificateType}</div>
-                <div className="text-medium text-gray-900">{request.university}</div>
+                <div className="text-medium text-black">{request.university}</div>
               </div>
             </div>
           ))}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios"; 
 import "../index.css";
 import Navbar from '../components/navbar'
+import { Link } from "react-router-dom";
 
 function Container() {
   const [formData, setFormData] = useState({
@@ -68,7 +69,7 @@ function Container() {
               </div>
             </div>
             <div className="p-8 text-left">
-              <label htmlFor="file">Partenaire:</label>
+              <label htmlFor="file"><Link to="/">Partenaire:</Link></label>
               <br />
               {/* progress bar */}
               <div class="w-40 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mr-auto ">

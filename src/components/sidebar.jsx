@@ -45,44 +45,44 @@ function Sidebar() {
           <div className="flex flex-col flex-1 w-auto pb-auto ">
             <nav className="flex-1 px-2 py-4 bg-white-800">
               <br />
-              <p>Menus</p>
+              <p className="pb-2">Menus</p>
               <hr />
               <Link
                 to="/"
-                className="flex items-center px-4 py-2 text-black hover:bg-blue-200 text-black text-center"
+                className="flex items-center px-4 py-2 text-black hover:bg-blue-200 text-black "
               >
-                <i className="fas fa-th h-6 w-6 mr-2 text-blue-400"></i>
+                <i className="fas fa-th h-6 w-6 mr-2 mt-2 text-blue-400"></i>
                 Tableau de bord
               </Link>
               <Link
                 to="/profile"
-                className="flex items-center px-4 py-2 mt-2 text-black hover:bg-blue-200 text-black"
+                className="flex items-center px-4 py-2 text-black hover:bg-blue-200 text-black"
               >
-                <i className="far fa-id-badge h-6 w-6 mr-2 text-blue-400"></i>
+                <i className="far fa-id-badge h-6 w-6 mr-2 mt-2 text-blue-400"></i>
                 Profil
               </Link>
               <a
                 href="#"
-                className="flex items-center px-4 py-2 mt-2 text-black hover:bg-blue-200 text-black"
+                className="flex items-center px-4 py-2 text-black hover:bg-blue-200 text-black"
               >
-                <i className="fas fa-file h-6 w-6 mr-2 text-blue-400"></i>
+                <i className="fas fa-file h-6 w-6 mr-2 mt-2 text-blue-400"></i>
                 Ficher
               </a>
               <br />
-              <p>Actions</p>
+              <p className="pb-2">Actions</p>
               <hr />
               <a
                 href="#"
-                className="flex items-center px-4 py-2 mt-2 text-black hover:bg-blue-200 text-black"
+                className="flex items-center px-4 py-2 text-black hover:bg-blue-200 text-black"
               >
-                <i className="fas fa-cog h-6 w-6 mr-2 text-blue-400"></i>
+                <i className="fas fa-cog flex h-6 w-6 mr-2 mt-2 text-blue-400 "></i>
                 Settings
               </a>
               <a
                 href="#"
-                className="flex items-center px-4 py-2 mt-2 text-black hover:bg-blue-200 text-black"
+                className="flex items-center px-4 py-2 text-black hover:bg-blue-200 text-black"
               >
-                <i className="fas fa-info-circle h-6 w-6 mr-2 text-blue-400"></i>
+                <i className="fas fa-info-circle h-6 w-6 mr-2  mt-2 text-blue-400"></i>
                 Infos
               </a>
 
@@ -91,9 +91,9 @@ function Sidebar() {
               
               <button
                 onClick={() => signOut()}
-                className="flex items-center px-4 py-4 mt-2 text-black hover:bg-blue-200 text-black"
+                className="flex items-center px-4 py-4  text-black hover:bg-blue-200 text-black"
               >
-                <i className="fas fa-sign-out-alt h-6 w-6 mr-2 text-blue-400"></i>
+                <i className="fas fa-sign-out-alt h-6 w-6 mr-2 mt-2 text-blue-400"></i>
                 Se deconnecter
               </button>
               <br />
