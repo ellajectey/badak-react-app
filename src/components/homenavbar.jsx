@@ -1,6 +1,6 @@
 import React from 'react';
 import img from '../assets/badak-logo.png';
-import { Link} from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 
 
 function Homenavbar() {
@@ -15,15 +15,19 @@ function Homenavbar() {
         
         <div class="flex-grow"></div>
         <div class="hidden items-center justify-center gap-6 md:flex">
-            <Link to="/login" class="font-dm text-sm font-medium text-slate-700">Login</Link>
+
+           <Link to="/portal"> <button className=' py-2 px-4 text-center text-black border border-gray400 rounded-lg hover:bg-blue-400 hover:text-white'><i className="fas fa-user-circle  text-center text-blue-600 hover:text-white px-4 text-2xl"></i>Visit Portal</button></Link>
+            {/* <Link to="/login" class="font-dm text-sm font-medium text-slate-700">Login</Link>
             <Link to="/register"
                 class="rounded-md bg-blue-500 px-3 py-1.5 font-dm text-sm font-medium text-white  transition-transform duration-200 ease-in-out hover:scale-[1.03]">
                     Sign up 
-            </Link>
+            </Link> */}
         </div>
         <div class="relative flex items-center justify-center md:hidden">
             <button type="button">
+            <Link to="/portal">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-auto text-slate-900"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg>
+                </Link>
             </button>
         </div>
     </nav>

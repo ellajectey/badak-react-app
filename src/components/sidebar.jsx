@@ -76,7 +76,7 @@ function Sidebar() {
                 className="flex items-center px-4 py-2 text-black hover:bg-blue-200 text-black"
               >
                 <i className="fas fa-cog flex h-6 w-6 mr-2 mt-2 text-blue-400 "></i>
-                Settings
+                Parametre
               </a>
               <a
                 href="#"

@@ -98,8 +98,9 @@ function Container() {
             <br />
             <hr />
           </div>
-          <div className="grid grid-cols-2 gap-x-24 ">
-            <div className="max-w-md mx-auto">
+          {/* bottom left grid */}
+          <div className="flex flex-col md:flex-row md:justify-between">
+            <div className="max-w-md mx-auto md:ml-4">
               <form
                 id="myForm"
                 onSubmit={handleSubmit}
@@ -212,6 +213,7 @@ function Container() {
                 </div>
               </form>
             </div>
+            {/* bottom right grid */}
             <div>
               <div className="border-dashed border border-yellow-300 rounded-lg inline-block px-10 py-10 text-center">
                 <i className="fas fa-cloud-upload-alt text-40 text-blue-400"></i>

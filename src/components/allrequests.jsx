@@ -43,7 +43,7 @@ function Allrequests() {
       {/* Requests table to show all requests done by the student/user */}
 
       <div className="shadow-md mx-10 rounded-lg bg-white p-8">
-        <h3>Your Requests</h3>
+        <h3 className="py-4 font-bold ">Your Requests</h3>
         {loading ? (
           <p>Loading...</p>
         ) : (

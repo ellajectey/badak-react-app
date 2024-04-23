@@ -11,9 +11,9 @@ import PartnerUI from "./pages/partnerUI.jsx";
 
 const router = createBrowserRouter([
 
-  { path: "/", element: <PartnerUI /> },
+  { path: "/partner", element: <PartnerUI /> },
   { path: "/portal", element: <SpPortal /> },
-  { path: "/login", element: <Login /> },
+  { path: "/", element: <Login /> },
   { path: "/register", element: <Signup /> },
   { path: "/profile", element: <Profile /> }
 

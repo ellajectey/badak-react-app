@@ -7,12 +7,12 @@ import Sidebar from '../components/sidebar.jsx';
 
 function SpPortal() {
     return (
-        <div>
+        <div className='flex'>
             {/* Student and Partner portal page */}
-            
-            <div className="flex w-auto">  
-            <Sidebar/><Container/>  
-            </div>
+           
+            <Sidebar/>
+            <Container/>  
+           
             
         </div>
     );
