@@ -58,7 +58,7 @@ function Registercard() {
         
         let responseData = await response.json();
         console.log(responseData);
-        navigate("/login");
+        navigate("/");
         
         
       } catch (error) {
@@ -68,7 +68,8 @@ function Registercard() {
 
   return (
     <div>
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-4 sm:px-6 lg:px-8">
+      
+      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img className="mx-auto w-20 h-20 w-auto" src={img} alt="Workflow" />
           <h2 className=" text-center text-xl leading-9 font-bold text-gray-900">
