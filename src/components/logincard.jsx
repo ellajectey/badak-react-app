@@ -60,7 +60,8 @@ function Logincard() {
   
   return (
     <div>
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6">
+      {/* <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6"> */}
+      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img className="mx-auto w-20 h-20 w-auto" src={img} alt="Workflow" />
           <h2 className="mt-2 text-center text-2xl leading-9 font-bold text-gray-900">
@@ -79,14 +80,14 @@ function Logincard() {
                 return (
                   <Form>
                     <div>
-                      <div className="flex mt-1 rounded-md ">
+                    <div className="mt-6 flex justify-center">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
                         <FormikControl
                           control="input"
                           type="email"
                           name="email"
                           placeholder="user@example.com"
-                          className="appearance-none block w-80 px-3 py-2 ml-4 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                        />
+                          className="appearance-none block w-full px-3 py-2 pr-12 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"/>
 
                         <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                           <svg
@@ -103,51 +104,57 @@ function Logincard() {
                         </div>
                       </div>
                     </div>
-
-                    <div className="mt-6 ">
-                      <div className="flex mt-1 rounded-md">
-                        <FormikControl
-                          control="input"
-                          name="password"
-                          placeholder="password"
-                          type={visible ? "text" : "password"}
-                          className="appearance-none block w-80 ml-4 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                        />
-                        <div
-                          className="flex items-center text-center justify-center p-2 "
-                          onClick={() => setVisible(!visible)}
-                        >
-                          {visible ? (
-                            <i className="fas fa-eye text-gray-400"></i>
-                          ) : (
-                            <i className="fas fa-eye-slash text-gray-400"></i>
-                          )}
-                        </div>
-                      </div>
                     </div>
 
-                    <div className="mt-6">
-                      <span className="block w-full rounded-md ">
-                        <button
-                          type="submit"
-                          disabled={!formik.isValid}
-                          className="w-80 flex justify-center py-2 px-4 ml-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-                        >
-                          Sign in
-                        </button>
-                      </span>
+                    <div className="mt-6 flex justify-center">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+    <FormikControl
+      control="input"
+      name="password"
+      placeholder="password"
+      type={visible ? "text" : "password"}
+      className="appearance-none block w-full px-3 py-2 pr-12 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+    />
+    <div
+      className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+      onClick={() => setVisible(!visible)}
+    >
+      {visible ? (
+        <i className="fas fa-eye text-gray-400"></i>
+      ) : (
+        <i className="fas fa-eye-slash text-gray-400"></i>
+      )}
+    </div>
+  </div>
+</div>
 
-                      <p className="mt-2 text-center text-sm leading-5 text-gray-500 max-w">
-                        Or
-                        <br />
-                        <Link
-                          to="/register"
-                          className="text-sm text-blue-500 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                        >
-                          create a new acccount
-                        </Link>
-                      </p>
-                    </div>
+
+
+<div className="mt-6">
+  <span className="block w-full rounded-md">
+  <button
+    type="submit"
+    disabled={!formik.isValid}
+    className="w-full flex justify-center items-center py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+>
+    Sign In
+</button>
+
+  </span>
+
+  {/* Move the <p> tag outside the <span> to ensure it comes after the button */}
+  <p className="mt-2 text-center text-sm leading-5 text-gray-500 max-w">
+    Or
+    <br />
+    <Link
+      to="/register"
+      className="text-sm text-blue-500 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150"
+    >
+      create a new account
+    </Link>
+  </p>
+</div>
+
                   </Form>
                 );
               }}

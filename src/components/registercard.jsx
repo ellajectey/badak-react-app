@@ -87,124 +87,139 @@ function Registercard() {
               {(formik) => {
                 return <Form>
                   <div>
-                    <div className="mt-1 relative rounded-md ">
-                      <FormikControl
-                        control="input"
-                        type="text"
-                        name="firstName"
-                        placeholder="first name"
-                        className="appearance-none block w-80 ml-4 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                      />
-                      <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <svg
-                          className="h-5 w-5 text-red-500"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
+                  <div className="mt-1 flex justify-center">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                        <FormikControl
+                          control="input"
+                          type="text"
+                          name="firstname"
+                          placeholder="firstname"
+                          className="appearance-none block w-full px-3 py-2 pr-12 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"/>
+
+                        <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                          <svg
+                            className="h-5 w-5 text-red-500"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                              clipRule="evenodd"
+                            ></path>
+                          </svg>
+                        </div>
                       </div>
                     </div>
+                    
                   </div>
                   <div>
                     <br/>
-                    <div className="mt-1 relative rounded-md ">
-                      <FormikControl
-                        control="input"
-                        type="text"
-                        name="lastName"
-                        placeholder="last name"
-                        className="appearance-none block w-80 ml-4 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                      />
-                      <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <svg
-                          className="h-5 w-5 text-red-500"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
+                    <div className="mt-1 flex justify-center">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                        <FormikControl
+                          control="input"
+                          type="text"
+                          name="lastname"
+                          placeholder="lastname"
+                          className="appearance-none block w-full px-3 py-2 pr-12 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"/>
+
+                        <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                          <svg
+                            className="h-5 w-5 text-red-500"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                              clipRule="evenodd"
+                            ></path>
+                          </svg>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                    </div>
 
-                  <div className="mt-6">
-                    <div className="mt-1 relative rounded-md ">
-                      <FormikControl
-                        control="input"
-                        type="email"
-                        name="email"
-                        placeholder="user@example.com"
-                        className="appearance-none block w-80 ml-4 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5
-                "
-                      />
-                      <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <svg
-                          className="h-5 w-5 text-red-500"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
+                  <div className="mt-6 flex justify-center">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                        <FormikControl
+                          control="input"
+                          type="email"
+                          name="email"
+                          placeholder="user@example.com"
+                          className="appearance-none block w-full px-3 py-2 pr-12 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"/>
+
+                        <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                          <svg
+                            className="h-5 w-5 text-red-500"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                              clipRule="evenodd"
+                            ></path>
+                          </svg>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                    
+                  <div className="mt-6 flex justify-center">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+    <FormikControl
+      control="input"
+      name="password"
+      placeholder="password"
+      type={visible ? "text" : "password"}
+      className="appearance-none block w-full px-3 py-2 pr-12 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+    />
+    <div
+      className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+      onClick={() => setVisible(!visible)}
+    >
+      {visible ? (
+        <i className="fas fa-eye text-gray-400"></i>
+      ) : (
+        <i className="fas fa-eye-slash text-gray-400"></i>
+      )}
+    </div>
+  </div>
+</div>
 
-                  <div className="mt-6">
-                    <div className=" flex mt-1 rounded-md ">
-                      <FormikControl
-                        control="input"
-                        type={visible ? "text":"password"}
-                        name="password"
-                        placeholder="password"
-                        className="appearance-none block w-80 ml-4 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                      />
-                      <div className="flex items-center text-center justify-center p-2 " onClick={()=> setVisible(!visible)}> 
-                          {
-                            visible ?  <i className="fas fa-eye text-gray-400"></i> : <i className="fas fa-eye-slash text-gray-400"></i>
-                          }
-                        </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-6">
-                    <div className=" flex mt-1 rounded-md ">
-                      <FormikControl
-                        control="input"
-                        type={visible ? "text":"password"}
-                        name="confirmPassword"
-                        placeholder="Confirm Password"
-                        className="appearance-none block w-80 ml-4 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                      />
-                      <div className="flex items-center text-center justify-center p-2 " onClick={()=> setVisible(!visible)}> 
-                          {
-                            visible ?  <i className="fas fa-eye text-gray-400"></i> : <i className="fas fa-eye-slash text-gray-400"></i>
-                          }
-                        </div>
-                    </div>
-                  </div>
+<div className="mt-6 flex justify-center">
+  <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+    <FormikControl
+      control="input"
+      name="password"
+      placeholder="password"
+      type={visible ? "text" : "password"}
+      className="appearance-none block w-full px-3 py-2 pr-12 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+    />
+    <div
+      className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+      onClick={() => setVisible(!visible)}
+    >
+      {visible ? (
+        <i className="fas fa-eye text-gray-400"></i>
+      ) : (
+        <i className="fas fa-eye-slash text-gray-400"></i>
+      )}
+    </div>
+  </div>
+</div>
                   <br />
-                  <div className="mt-2 ">
+                  <div className="mt-6 ">
                     <span className="block w-80 rounded-md ">
-                      <button
-                        type="submit"
-                        disabled={!formik.isValid}
-                        className="w-80 flex justify-center py-2 px-4 ml-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-                      >
-                          Register
-                      </button>
+                    <button
+    type="submit"
+    disabled={!formik.isValid}
+    className="w-80 flex justify-center items-center py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+>
+    Register
+</button>
+
                     </span>
                     <p className="mt-2 text-center text-sm leading-5 text-gray-500 max-w">
                       Or
