@@ -28,7 +28,7 @@ function Sidebar() {
       console.log(responseData);
       sessionStorage.removeItem('token');
       sessionStorage.removeItem('user');
-      navigate("/login")
+      navigate("/")
     } catch (error) {
       console.log(error);
     }
